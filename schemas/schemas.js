@@ -2,14 +2,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const Tag = new Schema({
-  tag_name: { type: String },
+  tagName: { type: String },
   color: { type: String },
   description: { type: String },
-  tag_group: { type: String },
+  tagGroup: { type: String },
 });
 
 const Entry = new Schema({
-  date: { type: Date, default: Date.now },
+  date: { type: Date },
   tags: [
     {
       _id: { type: Schema.Types.ObjectId, ref: "Tag" },
@@ -18,8 +18,8 @@ const Entry = new Schema({
     },
   ],
   notes: { type: String },
-  woke_up: { type: Date },
-  went_to_sleep: { type: Date },
+  wokeUp: { type: Date },
+  wentToSleep: { type: Date },
   energy: { type: Number, min: 1, max: 10 },
   happiness: { type: Number, min: 1, max: 10 },
   motivation: { type: Number, min: 1, max: 10 },
