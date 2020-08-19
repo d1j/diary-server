@@ -5,9 +5,11 @@ const port = 3000;
 
 const db = require("./src/db");
 
-const Diary = require("./routes/diary");
+const entry = require("./routes/entry");
+const tag = require("./routes/tag");
 
-app.use("/diary", Diary);
+app.use("/diary/entry", entry);
+app.use("/diary/tag", tag);
 
 app.get("/", (req, res) => res.send("Hello World!"));
 
@@ -18,3 +20,5 @@ app.listen(port, () =>
 );
 
 db.init();
+
+module.exports = app;

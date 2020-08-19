@@ -4,15 +4,15 @@
 
 ### Requests:
 
-- `POST` /tags/add
-- `POST` /tags/update/
-- `GET` /tags/list/
-- `POST` /tags/delete/
+- `GET` /diary/tag/list/
+- `POST` /diary/tag/add
+- `PUT` /diary/tag/update/
+- `DELETE` /diary/tag/delete/
 
 ---
 
-- `POST` /entry/add/
-- `POST` /entry/update/
-- `POST` /entry/period/
-- `POST` /entry/get/
-- `POST` /entry/delete/
+- `GET` /diary/entry/get/
+- `GET` /diary/entry/period/
+- `POST` /diary/entry/add/
+- `PUT` /diary/entry/update/
+- `DELETE` /diary/entry/delete/

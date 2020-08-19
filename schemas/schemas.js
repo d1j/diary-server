@@ -2,14 +2,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const Tag = new Schema({
-  tagName: { type: String },
-  color: { type: String },
+  tagName: { type: String, required: true },
+  color: { type: String, required: true },
   description: { type: String },
   tagGroup: { type: String },
 });
 
 const Entry = new Schema({
-  date: { type: Date },
+  date: { type: Date, required: true },
   tags: [
     {
       _id: { type: Schema.Types.ObjectId, ref: "Tag" },
