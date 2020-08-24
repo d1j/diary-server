@@ -15,6 +15,7 @@
   "homepage": "https://github.com/d1j/diary-server#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "config": "^3.3.1",
     "express": "^4.17.1",
     "mongoose": "^5.9.22",
     "morgan": "^1.10.0"
@@ -26,7 +27,7 @@
     "dotenv": "^8.2.0"
   },
   "scripts": {
-    "start": "SET NODE_ENV=dev && node index.js",
-    "test": "mocha --timeout 10000"
+    "start": "node index.js",
+    "test": "NODE_ENV=test mocha --timeout 10000"
   }
 }

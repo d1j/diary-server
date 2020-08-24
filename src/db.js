@@ -4,18 +4,18 @@ const mongoose = require("mongoose");
 const Tag = require("../schemas/schemas").Tag;
 const Entry = require("../schemas/schemas").Entry;
 
-const DB_URL = `mongodb://${process.env.MONGO_HOSSTNAME}:27017/${process.env.DATABASE_NAME}`;
-const DB_CONFIG = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-};
-
-module.exports.init = () => {
-  console.log("Connecting to MongoDB...");
-  mongoose.connect(DB_URL, DB_CONFIG).then(
+module.exports.init = ({ host, port, name }) => {
+  if (process.env.NODE_ENV != "test") console.log("Connecting to MongoDB...");
+  const dbUrl = `mongodb://${host}:${port}/${name}`;
+  const dbConfig = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  };
+  mongoose.connect(dbUrl, dbConfig).then(
     () => {
-      console.log("Successfully connected to MongoDB.");
+      if (process.env.NODE_ENV != "test")
+        console.log("Successfully connected to MongoDB.");
     },
     (err) => {
       console.log("Failed to connect to MongoDB");
