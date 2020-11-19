@@ -1,18 +1,22 @@
-# Routes:
+## information I would prefer to store
 
-## Diary
+* Notes
+* Woke up
+* Went to sleep
+* Energy level
+* Motivation level
+* Happiness level
+* *Optional: store pictures from the day*
+  
+## stats related to Entry data I would like to see: 
 
-### Requests:
+* Hours of sleep during the given period
+* Averages of the following: 
+  * hours of sleep
+  * Energy
+  * Motivation
+  * Happiness
 
-- `GET` /diary/tag/list/
-- `POST` /diary/tag/add
-- `PUT` /diary/tag/update/
-- `DELETE` /diary/tag/delete/
+## stats related to Tags data: 
 
----
-
-- `GET` /diary/entry/get/
-- `GET` /diary/entry/period/
-- `POST` /diary/entry/add/
-- `PUT` /diary/entry/update/
-- `DELETE` /diary/entry/delete/
+* *To be continued*

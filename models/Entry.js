@@ -1,13 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const Tag = new Schema({
-  tagName: { type: String, required: true },
-  color: { type: String, required: true },
-  description: { type: String },
-  tagGroup: { type: String },
-});
-
 const Entry = new Schema({
   date: { type: Date, required: true },
   tags: [
@@ -25,5 +18,4 @@ const Entry = new Schema({
   motivation: { type: Number, min: 1, max: 10 },
 });
 
-module.exports.Entry = mongoose.model("Entry", Entry);
-module.exports.Tag = mongoose.model("Tag", Tag);
+module.exports = mongoose.model("Entry", Entry);
